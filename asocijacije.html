@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepenasti Raspored sa Centriranim Poljima</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .left-side, .right-side {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+        }
+
+        .box {
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid black;
+            font-size: 16px;
+            margin-bottom: 20px;
+            min-height: 60px; /* Postavite minimalnu visinu za box */
+        }
+
+        /* Stil za input polja */
+        input {
+            width: 100%;
+            height: 50px; /* Povećana visina */
+            border: none;
+            background-color: white; /* Promenjena boja pozadine */
+            text-align: center;
+            font-size: 20px;
+            outline: none;
+            color: black; /* Boja teksta */
+            box-sizing: border-box; /* Uključuje padding u ukupne dimenzije */
+        }
+
+        /* Leva strana */
+        .left-side .box:nth-child(1),
+        .left-side .box:nth-child(6) {
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .left-side .box:nth-child(2),
+        .left-side .box:nth-child(7) {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .left-side .box:nth-child(3),
+        .left-side .box:nth-child(8) {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .left-side .box:nth-child(4),
+        .left-side .box:nth-child(9) {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .left-side .box:nth-child(5),
+        .left-side .box:nth-child(10) {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Desna strana */
+        .right-side .box:nth-child(1),
+        .right-side .box:nth-child(6) {
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .right-side .box:nth-child(2),
+        .right-side .box:nth-child(7) {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .right-side .box:nth-child(3),
+        .right-side .box:nth-child(8) {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .right-side .box:nth-child(4),
+        .right-side .box:nth-child(9) {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .right-side .box:nth-child(5),
+        .right-side .box:nth-child(10) {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Široko polje u centru */
+        .wide-box {
+            background-color: #ccc;
+            text-align: center;
+            font-size: 20px;
+            padding: 40px; /* Povećan padding za više prostora unutar polja */
+            box-sizing: border-box;
+            margin: 40px 0; /* Povećana margina na vrhu i dnu širokog polja */
+            max-width: calc(100% - 60px); /* Smanjena maksimalna širina */
+            height: 80px; /* Povećana visina širokog polja */
+        }
+
+        /* Raspored širokog polja */
+        .wide-box-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: calc(50% - 80px);
+        }
+
+        /* Dodaj margine na A5 i B5 */
+        .left-side .box:nth-child(5),
+        .right-side .box:nth-child(5) {
+            margin-bottom: 40px; /* Razmak između A5/B5 i širokog polja */
+        }
+
+        /* Dodaj marginu na C1 i D1 */
+        .right-side .box:nth-child(6),
+        .left-side .box:nth-child(6) {
+            margin-top: 40px; /* Razmak između širokog polja i C1/D1 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Leva strana - A i D sekcija -->
+  <div class="left-side">
+    <div class="box"><input type="text" placeholder="A1"></div>
+    <div class="box"><input type="text" placeholder="A2"></div>
+    <div class="box"><input type="text" placeholder="A3"></div>
+    <div class="box"><input type="text" placeholder="A4"></div>
+    <div class="box"><input type="text" placeholder="A5"></div>
+
+    <div class="box"><input type="text" placeholder="D1"></div>
+    <div class="box"><input type="text" placeholder="D2"></div>
+    <div class="box"><input type="text" placeholder="D3"></div>
+    <div class="box"><input type="text" placeholder="D4"></div>
+    <div class="box"><input type="text" placeholder="D5"></div>
+  </div>
+
+  <!-- Desna strana - B i C sekcija -->
+  <div class="right-side">
+    <div class="box"><input type="text" placeholder="B1"></div>
+    <div class="box"><input type="text" placeholder="B2"></div>
+    <div class="box"><input type="text" placeholder="B3"></div>
+    <div class="box"><input type="text" placeholder="B4"></div>
+    <div class="box"><input type="text" placeholder="B5"></div>
+
+    <div class="box"><input type="text" placeholder="C1"></div>
+    <div class="box"><input type="text" placeholder="C2"></div>
+    <div class="box"><input type="text" placeholder="C3"></div>
+    <div class="box"><input type="text" placeholder="C4"></div>
+    <div class="box"><input type="text" placeholder="C5"></div>
+  </div>
+
+  <!-- Široko polje u centru -->
+  <div class="wide-box-container">
+      <div class="wide-box"><input type="text" placeholder="E"></div>
+  </div>
+</div>
+
+<script>
+    // Prilagoditi širinu širokog polja na širinu A5 i B5
+    const a5Box = document.querySelector('.left-side .box:nth-child(5)');
+    const b5Box = document.querySelector('.right-side .box:nth-child(5)');
+    const wideBox = document.querySelector('.wide-box');
+
+    // Postavljanje širine širokog polja na maksimalnu širinu između A5 i B5 minus 60px za razmak
+    const maxWidth = Math.min(a5Box.offsetWidth, b5Box.offsetWidth) - 60; // 30px sa svake strane
+    wideBox.style.width = `${maxWidth}px`;
+
+    // Postavljanje visine širokog polja na visinu A5 ili B5
+    const height = Math.max(a5Box.offsetHeight, b5Box.offsetHeight);
+    wideBox.style.height = `${height}px`;
+</script>
+
+</body>
+</html>
